@@ -15,3 +15,15 @@ nav.querySelectorAll('a').forEach((link) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+const nextButton = document.getElementById("next-button");
+const welcomeScreen = document.getElementById("welcome-screen");
+
+if (nextButton && welcomeScreen) {
+  nextButton.addEventListener("click", function () {
+    welcomeScreen.classList.add("hide");
+
+    setTimeout(function () {
+      welcomeScreen.remove();
+    }, 500);
+  });
+}
