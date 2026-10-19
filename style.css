@@ -493,4 +493,88 @@ section p,
 
 .site-header .nav-links a:hover {
   color: #526fe8;
+} 
+/* Full-screen welcome page */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f7f8fa url("welcome.png") center / cover no-repeat;
+  text-align: center;
+  transition: opacity .5s ease, visibility .5s ease;
 }
+
+.welcome-content {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.welcome-logo {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  object-fit: contain;
+}
+
+.welcome-tagline {
+  margin: 0;
+  color: #58657c;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+#next-button {
+  margin-top: 12px;
+  padding: 14px 34px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #398bff, #8050ff);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(75, 105, 230, .25);
+  transition: transform .2s ease;
+}
+
+#next-button:hover {
+  transform: translateY(-3px);
+}
+
+#next-button span {
+  margin-left: 8px;
+}
+
+#welcome-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .welcome-logo {
+    max-width: 100%;
+  }
+
+  .welcome-content {
+    gap: 18px;
+  }
+
+  .welcome-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
+
