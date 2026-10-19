@@ -336,3 +336,80 @@ footer,
     transition: none !important;
   }
 }
+/* Mobile layout fixes */
+body {
+  overflow-x: hidden;
+}
+
+.site-header .nav-inner {
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: inline;
+}
+
+.nav-links {
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.hero .actions,
+.hero .button-group,
+.hero .hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero .actions a,
+.hero .button-group a,
+.hero .hero-actions a {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .site-header .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 12px 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero .actions,
+  .hero .button-group,
+  .hero .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .actions a,
+  .hero .button-group a,
+  .hero .hero-actions a {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    overflow-wrap: anywhere;
+  }
+}
