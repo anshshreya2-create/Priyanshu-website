@@ -735,3 +735,11 @@ body:has(#welcome-screen:not(.hide)) {
   }
 }
 
+.school-name {
+  margin: 6px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.6;
+}
+
