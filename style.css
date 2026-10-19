@@ -578,3 +578,52 @@ section p,
   }
 }
 
+/* Fix welcome screen overlap */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: auto;
+  background: #f5f6f8 url("welcome.png") center / cover no-repeat;
+}
+
+#welcome-screen .welcome-content {
+  min-height: calc(100vh - 48px);
+  min-height: calc(100dvh - 48px);
+  justify-content: center;
+  gap: 20px;
+}
+
+#welcome-screen .welcome-logo {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  object-fit: contain;
+}
+
+#welcome-screen ~ * {
+  position: relative;
+}
+
+body:has(#welcome-screen:not(.hide)) {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  #welcome-screen {
+    padding: 20px;
+    background-position: center;
+  }
+
+  #welcome-screen .welcome-logo {
+    max-width: 100%;
+  }
+
+  #welcome-screen .welcome-tagline {
+    font-size: 11px;
+  }
+}
+
